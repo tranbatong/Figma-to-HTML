@@ -7,4 +7,81 @@ html {
 /* Khôi phục lại cỡ chữ mặc định */
 body {
   font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Các thành phần dùng chung */
+a {
+  text-decoration: none;
+  /* Xóa gạch chân thẻ a */
+}
+.btn {
+  display: inline-block;
+  min-width: 118px;
+  padding: 0 16px;
+  line-height: 50px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 24.5px;
+  background: #171100;
+}
+.header {
+  background-color: #fffcf4;
+}
+.header.fixed {
+  position: sticky;
+  top: -28px;
+}
+/* Tác động vào class body thẻ con của hearder   */
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px;
+  /* căn chỉnh lên 1 hàng */
+}
+.nav ul {
+  display: flex;
+}
+.nav {
+  margin-left: auto;
+  /* Căn chỉnh margin */
+}
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav a {
+  position: relative;
+  /* Cho phép căn chỉnh khối */
+  color: #5f5b53;
+  font-size: 1.6rem;
+  padding: 8px 21px;
+}
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  text-shadow: 1px 0 0 currentColor;
+  /* text-shadow: thêm bóng vào văn bản */
+}
+.nav li.active a::after {
+  position: absolute;
+  /* định vị theo tổ tiên có position relative gần nhất */
+  left: 21px;
+  bottom: 6px;
+  display: block;
+  content: "";
+  width: 12px;
+  height: 2px;
+  background: #171100;
+  border-radius: 1px;
+}
+.header .btn-sign-up {
+  min-width: 144px;
+}
+.header .action {
+  margin-left: 49px;
 }
