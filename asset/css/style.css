@@ -15,7 +15,31 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Các thành phần dùng chung */
+/*=============== Các thành phần dùng chung================ */
+
+.break-all {
+  word-break: break-all;
+  /* Cho phép ngắt TỪ ở bất kì vị trí nào nếu cần để xuống dòng */
+}
+
+/* CSS line clamping: giới hạn số dòng hiển thị của văn bản */
+.line-clamp {
+  display: -webkit-box;
+  /* Biến phần tử thành hộp linh hoạt kiểu cũ  */
+  -webkit-line-clamp: var(--line-clamp, 1);
+  /* Giới hạn số dòng tối đa được hiển thị */
+  -webkit-box-orient: vertical;
+  /* Thiết lập hướng của hộp là theo chiều dọc */
+  overflow: hidden;
+  /* Ẩn phần văn bản vượt quá giới hạn số dòng, tránh tràn ra ngoài khung */
+}
+
+.line-clamp.line-2 {
+  --line-clamp: 2;
+  /* --line-clamp sẽ nhận giá trị là 2 nếu khi có cả 2 class */
+  /* lúc đó sẽ thay biến var(--line-clamp,1 thành 2, 1 là giá trị mặc định */
+}
+
 .heading-lv2 {
   color: #171100;
   font-family: var(--font-heading);
@@ -307,6 +331,8 @@ a {
   gap: 30px;
 }
 .popular .course-item {
+  flex: 1;
+  /* Trọng số của 3 item bằng nhau, không bị vỡ giao diện */
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
